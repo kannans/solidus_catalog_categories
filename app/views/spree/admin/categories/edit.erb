@@ -1,0 +1,26 @@
+
+<% content_for :page_actions do %>
+  <li>
+    <%= button_link_to Spree.t(:add_catalog), spree.admin_categories_path, { class: 'add-taxon-button' } %>
+  </li>
+<% end %>
+
+<%= form_for [:admin, @category] do |f| %>
+  <fieldset class="no-border-top">
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <div class="filter-actions actions">
+      <%= button Spree.t('actions.update') %>
+      <%= button_link_to Spree.t('actions.cancel'), admin_categories_path %>
+    </div>
+  </fieldset>
+
+
+  <div>
+    <script>
+      Spree.routes.category_path = "<%= spree.api_category_path(@category) %>";
+      Spree.routes.category_catalogs_path = "<%= spree.api_category_catalogs_path(@category) %>";
+      Spree.routes.admin_category_taxons_path = "<%= spree.admin_category_catalogs_path(@category) %>";
+    </script>
+    <div id="category_tree" class="tree" data-category-id="<%= @category.id %>"></div>
+  </div>
+<% end %>

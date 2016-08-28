@@ -1,0 +1,12 @@
+<% if catalog.children.length != 0 %>
+  <ul>
+    <% catalog.children.each do |child| %>
+      <li id="<%= child.id %>" rel="catalog">
+        <a style="background-image: url(<%= child.icon.url %>);" href="#"><%= child.name %></a>
+        <% if child.children.length > 0 %>
+          <%= render :partial => 'catalog', :locals => { :catalog => child } %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

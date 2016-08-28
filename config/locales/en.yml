@@ -3,3 +3,11 @@
 
 en:
   hello: "Hello world"
+  spree:
+    new_category: New Category
+    admin:
+      tab:
+        categories: Categories
+        catalogs: Catalogs
+        display_order: Display Order
+    choose_a_catalog_to_sort_products_for: CHOOSE A CATALOG TO SORT PRODUCTS FOR

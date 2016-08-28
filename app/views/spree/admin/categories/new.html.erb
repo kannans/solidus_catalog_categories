@@ -1,0 +1,12 @@
+<% content_for :page_actions do %>
+<% end %>
+
+<%= form_for [:admin, @category] do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+  <fieldset class="no-border-top">
+    <br>
+    <div class="filter-actions actions" data-hook="buttons">
+      <%= button Spree.t('actions.create') %>
+    </div>
+  </fieldset>
+<% end %>

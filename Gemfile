@@ -1,7 +1,17 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'spree', github: 'spree/spree', branch: 'master'
-# Provides basic authentication functionality for testing parts of your engine
-gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: 'master'
+branch = ENV.fetch('SOLIDUS_BRANCH', 'master')
+gem "solidus", github: "solidusio/solidus", branch: branch
+
+if branch == 'master' || branch >= "v2.0"
+  gem "rails-controller-testing", group: :test
+end
+
+gem 'pg'
+# gem 'mysql2'
+
+group :development, :test do
+  gem "pry-rails"
+end
 
 gemspec
