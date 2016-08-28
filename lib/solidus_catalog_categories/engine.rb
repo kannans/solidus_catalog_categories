@@ -1,7 +1,7 @@
-module SpreeSolidusCatalogCategories
+module SolidusCatalogCategories
   class Engine < Rails::Engine
-    # require 'spree/core'
-    # isolate_namespace Spree
+    require 'spree/core'
+    isolate_namespace Spree
     engine_name 'solidus_catalog_categories'
     config.autoload_paths += %W(#{config.root}/lib)
 

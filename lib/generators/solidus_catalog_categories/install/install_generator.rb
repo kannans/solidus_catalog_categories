@@ -1,4 +1,4 @@
-module SpreeSolidusCatalogCategories
+module SolidusCatalogCategories
   module Generators
     class InstallGenerator < Rails::Generators::Base
 
