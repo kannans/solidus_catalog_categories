@@ -7,7 +7,7 @@ This is simple extension to rename the Taxons => Catalogs and Taxonomies => Cate
 
 1. Add this extension to your Gemfile with this line:
   ```ruby
-  gem 'spree_solidus_catalog_categories'
+  gem 'spree_solidus_catalog_categories', github: "kannans/solidus_catalog_categories"
   ```
 
 2. Install the gem using Bundler:
